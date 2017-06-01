@@ -13,27 +13,27 @@ Interesting blog posts:
 
 1. Install go: `brew install go` will do on OSX
 2. Install Linuxkit:
-'''
+```bash
 https://github.com/linuxkit/linuxkit.git
 cd linuxkit
 make
 cp ./bin/* /usr/local/bin
-'''
+```
 
 ## Mac Usage
 
 Requirements: a recent OSX, a recent Docker Edge installation, Go (see 1. above)
 
 1. Generate a bootable image based off of setup.yml
-'''
+```
 ./generate_image.sh
-'''
+```
 2. Run it in Hyperkit/VPNkit
-'''
+```
 ./boot.sh
-'''
+```
 3. TODO client stuff
 
 ## runc / containerd
 
-'''runc list # show running containers'''
+```runc list # show running containers```
