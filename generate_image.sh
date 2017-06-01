@@ -1,0 +1,1 @@
+moby build ./appliance.yml
