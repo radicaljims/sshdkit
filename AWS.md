@@ -125,7 +125,7 @@ aws ec2 --region us-east-2 authorize-security-group-ingress --group-name linuxki
 aws ec2 --region us-east-2 authorize-security-group-ingress --group-name linuxkit-sg --protocol tcp --port 80 --cidr 0.0.0.0/0
 ```
 
-#### Launch the instance (the PEM file is got by creating a key pair in the AWS console)
+#### Launch the instance (the image-id is got from the register-image command above, the PEM file is got by creating a key pair in the AWS console)
 
 ```bash
 aws ec2 --region us-east-2 run-instances --image-id ami-b51533d0 --count 1 --instance-type t2.micro --security-group-ids sg-a2f4decb --key-name amazon-dr
