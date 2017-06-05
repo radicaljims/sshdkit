@@ -1,5 +1,11 @@
 ## AWS
 
+### Note
+
+This guy got it all working before me: https://bee42.com/blog/linuxkit-with-initial-aws-support/
+
+### Rough Steps
+
 1. Create AWS account
 2. Create IAM user for aws cli to fiddle with
 3. Create S3 bucket for vms
@@ -25,6 +31,7 @@ aws s3 --region us-east-2 cp aws.img s3://aws-vms
 aws iam create-role --role-name vmimport --assume-role-policy-document file://trust-policy.json
 ```
 
+trust-policy.json:
 ```json
 {
    "Version": "2012-10-17",
@@ -48,6 +55,7 @@ aws iam create-role --role-name vmimport --assume-role-policy-document file://tr
 aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document file://role-policy.json
 ```
 
+role-policy.json:
 ```json
 {
    "Version": "2012-10-17",
@@ -91,6 +99,7 @@ aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-doc
 aws ec2 import-snapshot --description "Linuxkit Appliance" --disk-container file://aws_container.json
 ```
 
+aws_container.json:
 ```json
 {
     "Description": "Linuxkit Appliance",
